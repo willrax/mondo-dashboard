@@ -1,14 +1,52 @@
 .transactions {
   .header {
+    @extend .list-group-item;
+    @extend .row;
+
+    background-color: $navbar-default-bg;
+
+    .title {
+      @extend .col-xs-9;
+      @extend .col-md-9;
+    }
+
     .account-balance {
+      @extend .col-xs-3;
+      @extend .col-md-3;
+
       color: $alert-info-text;
       text-align: right;
     }
   }
 
-  .transaction {
-    .amount {
-      text-align: right;
+  .list-group {
+    .transaction {
+      .logo {
+        @extend .col-sm-1;
+        @extend .col-md-1;
+        @extend .hidden-xs;
+
+        img {
+          height: 100%;
+          width: 100%;
+        }
+      }
+
+      .title {
+        @extend .col-xs-9;
+        @extend .col-sm-8;
+        @extend .col-md-8;
+
+        text-overflow: ellipsis;
+      }
+
+      .amount {
+        @extend .col-xs-3;
+        @extend .col-sm-2;
+        @extend .col-md-3;
+
+        text-align: right;
+      }
     }
   }
 }

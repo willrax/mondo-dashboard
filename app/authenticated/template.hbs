@@ -2,18 +2,20 @@
   <div class="container">
     <div class="navbar-header">
       <div class="navbar-brand">
-        <img class="img-responsive" alt="Mondo" src="https://dl.dropboxusercontent.com/u/4162565/mondo.png">
+        {{#link-to 'authenticated.transactions'}}
+          <img class="img-responsive" alt="Mondo" src="https://dl.dropboxusercontent.com/u/4162565/mondo.png">
+        {{/link-to}}
       </div>
     </div>
 
     <ul class="nav navbar-nav">
-      <li>
+      <li class="transactions">
         {{#link-to 'authenticated.transactions'}}
           Transactions
         {{/link-to}}
       </li>
 
-      <li>
+      <li class="webhooks">
         {{#link-to 'authenticated.webhooks'}}
           Webhooks
         {{/link-to}}
@@ -21,7 +23,7 @@
     </ul>
 
     <ul class="nav navbar-nav navbar-right">
-      <li><a {{action "logOut"}}>Log Out</a></li>
+      <li class="logout"><a {{action "logOut"}}>Log Out</a></li>
     </ul>
   </div>
 </nav>

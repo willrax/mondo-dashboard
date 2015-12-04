@@ -10,4 +10,8 @@ nav {
       height: 100%;
     }
   }
+
+  ul.navbar-nav {
+    @extend .hidden-xs;
+  }
 }

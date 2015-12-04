@@ -1,0 +1,29 @@
+<nav class="navbar navbar-default navbar-fixed-top">
+  <div class="container">
+    <div class="navbar-header">
+      <div class="navbar-brand">
+        <img class="img-responsive" alt="Mondo" src="https://dl.dropboxusercontent.com/u/4162565/mondo.png">
+      </div>
+    </div>
+
+    <ul class="nav navbar-nav">
+      <li>
+        {{#link-to 'authenticated.transactions'}}
+          Transactions
+        {{/link-to}}
+      </li>
+
+      <li>
+        {{#link-to 'authenticated.webhooks'}}
+          Webhooks
+        {{/link-to}}
+      </li>
+    </ul>
+
+    <ul class="nav navbar-nav navbar-right">
+      <li><a {{action "logOut"}}>Log Out</a></li>
+    </ul>
+  </div>
+</nav>
+
+{{outlet}}

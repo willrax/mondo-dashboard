@@ -1,0 +1,49 @@
+<div class="container webhooks">
+  <div class="row">
+    <div class="col-md-8 col-md-offset-2">
+      <div class="list-group">
+        <div class="list-group-item row header">
+          <div class="col-md-12">
+            {{m-hover-button
+              text=toggleText
+              mouseEnter=(action "mouseEnterAdd")
+              mouseOut=(action "mouseOutAdd")
+              onClick=(action "toggleAdding")}}
+          </div>
+        </div>
+
+        {{#if addingWebhook}}
+          <div class="list-group-item row new-form">
+            <div class="col-md-12">
+              <form>
+                <div class="form-group">
+                  <div class="input-group">
+                    <input id="url"
+                      class="form-control"
+                      onchange={{action (mut url) value="target.value"}}
+                      placeholder="Enter a URL">
+
+                    <div class="input-group-addon save" {{action "saveWebhook"}}>
+                      Save
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        {{/if}}
+
+        {{#each webhooks as |webhook|}}
+          {{m-webhook webhook=webhook}}
+        {{else}}
+          <div class="list-group-item row empty">
+            <div class="col-md-12">
+              <h3>{{noWebhooksEmoji}}</h3>
+              <h5>You don't have any web hooks.</h5>
+            </div>
+          </div>
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

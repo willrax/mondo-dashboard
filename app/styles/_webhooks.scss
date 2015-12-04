@@ -1,0 +1,40 @@
+.webhooks {
+  .header {
+    background-color: $navbar-default-bg;
+
+    a {
+      cursor: pointer;
+    }
+  }
+
+  .list-group {
+    .new-form {
+      padding: $padding-large-vertical * 3 $padding-large-horizontal;
+
+      form {
+        .form-group {
+          margin-bottom: 0;
+        }
+
+        .save {
+          cursor: pointer;
+        }
+      }
+    }
+
+    .empty {
+      text-align: center;
+
+      > div {
+        text-align: center;
+      }
+    }
+
+    .webhook {
+      a {
+        color: $state-danger-text;
+        cursor: pointer;
+      }
+    }
+  }
+}

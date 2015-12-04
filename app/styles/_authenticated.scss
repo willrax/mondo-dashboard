@@ -1,0 +1,13 @@
+body {
+  padding-top: $padding-large-vertical * 8;
+}
+
+nav {
+  .navbar-brand {
+    padding: 5px;
+
+    img {
+      height: 100%;
+    }
+  }
+}

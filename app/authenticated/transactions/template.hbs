@@ -1,0 +1,20 @@
+<div class="container transactions">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <div class="list-group">
+        <div class="list-group-item row header">
+          <div class="col-md-3 col-md-offset-9 account-balance">
+            {{format-number
+              accountBalance
+              style="currency"
+              currency=mostRecentTransaction.currency}}
+          </div>
+        </div>
+
+        {{#each sortedTransactions as |transaction|}}
+          {{m-transaction transaction=transaction}}
+        {{/each}}
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,14 @@
+.transactions {
+  .header {
+    .account-balance {
+      color: $alert-info-text;
+      text-align: right;
+    }
+  }
+
+  .transaction {
+    .amount {
+      text-align: right;
+    }
+  }
+}

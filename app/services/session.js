@@ -20,7 +20,7 @@ export default Ember.Service.extend({
       this.set('session', sessions.get('firstObject'));
     }
 
-    return this.get('session');
+    return;
   },
 
   async authenticate(username, password) {
@@ -34,7 +34,6 @@ export default Ember.Service.extend({
       authToken: response.access_token,
       refreshToken: response.refresh_token
     });
-
     return this.get('session').save();
   },
 

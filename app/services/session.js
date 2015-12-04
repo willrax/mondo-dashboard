@@ -13,12 +13,14 @@ export default Ember.Service.extend({
     let sessions = await this.get('store').findAll('session');
 
     if (Ember.isEmpty(sessions)) {
-      let newSession = this.get('store').createRecord('session');
-      newSession.save();
+      let newSession = await this.get('store').createRecord('session');
+      await newSession.save();
       this.set('session', newSession);
     } else {
       this.set('session', sessions.get('firstObject'));
     }
+
+    return this.get('session');
   },
 
   async authenticate(username, password) {
@@ -32,6 +34,7 @@ export default Ember.Service.extend({
       authToken: response.access_token,
       refreshToken: response.refresh_token
     });
+
     return this.get('session').save();
   },
 

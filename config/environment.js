@@ -19,7 +19,7 @@ module.exports = function(environment) {
       'script-src': "'self'",
       'font-src': "'self'",
       'connect-src': "'self' https://a4g5vns74b.execute-api.eu-west-1.amazonaws.com https://production-api.gmon.io",
-      'img-src': "'self' https://dl.dropboxusercontent.com https://pbs.twimg.com avatars.io https://ss3.4sqi.net",
+      'img-src': "'self' https://dl.dropboxusercontent.com https://pbs.twimg.com avatars.io https://ss3.4sqi.net *.basemaps.cartocdn.com data:",
       'style-src': "'self'",
       'media-src': "'self'"
     }

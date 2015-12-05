@@ -2,16 +2,18 @@
   <div class="row">
     <div class="col-md-6 col-md-offset-3">
       <div class="list-group">
-        <div class="header">
-          <div class="title">
-            Current Balance
-          </div>
+        <div class="list-group-item current">
+          <div class="row">
+            <div class="title">
+              Current Balance
+            </div>
 
-          <div class="account-balance">
-            {{format-number
-              accountBalance
-              style="currency"
-              currency=mostRecentTransaction.currency}}
+            <div class="account-balance">
+              {{format-number
+                accountBalance
+                style="currency"
+                currency=mostRecentTransaction.currency}}
+            </div>
           </div>
         </div>
 

@@ -1,16 +1,46 @@
-<div class="logo">
-  <img src={{logo}}>
-</div>
+<div class="row header">
+  <div class="logo">
+    <img src={{logo}}>
+  </div>
 
-<div class="title">
-  {{title}}
-</div>
+  <div class="title">
+    {{#if merchant.fullLocation}}
+      <a onclick={{action "toggleExpand"}}>{{title}}</a>
+    {{else}}
+      {{title}}
+    {{/if}}
+  </div>
 
-<div class="amount">
-  {{format-number amount style="currency" currency=transaction.currency}}
+  <div class="amount">
+    {{format-number amount style="currency" currency=transaction.currency}}
+  </div>
 </div>
 
 {{#if expanded}}
-  <div class="details">
+  <div class="row details">
+    <div class="col-md-5">
+      {{#leaflet-map
+        lat=address.latitude
+        lng=address.longitude
+        zoom=17
+        class="map"
+        attributionControl=false
+        zoomControl=false}}
+        {{tile-layer url="http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png"}}
+
+        {{#circle-marker-layer
+          radius=10
+          location=merchant.fullLocation}}
+        {{/circle-marker-layer}}
+      {{/leaflet-map}}
+    </div>
+
+    <div class="col-md-6">
+      <address>
+        <strong>{{merchant.name}}</strong><br>
+        {{address.address}}<br>
+        {{address.city}} {{address.postcode}}<br>
+      </address>
+    </div>
   </div>
 {{/if}}

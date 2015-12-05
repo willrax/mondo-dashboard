@@ -44,6 +44,7 @@
     "ember-disable-proxy-controllers": "^1.0.1",
     "ember-export-application-global": "^1.0.4",
     "ember-intl": "2.0.0-rc.7",
+    "ember-leaflet": "2.1.1",
     "ember-localstorage-adapter": "0.5.5",
     "ember-pagefront": "willrax/ember-pagefront#13d0cc4aaecb5421320c81b98d3efa3f065769bd",
     "ember-validations": "2.0.0-alpha.4",

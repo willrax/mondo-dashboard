@@ -1,7 +1,7 @@
 import Ember from 'ember';
 
 export default Ember.Component.extend({
-  classNames: ['list-group-item', 'row', 'transaction'],
+  classNames: ['list-group-item', 'transaction'],
   tagName: 'div',
   expanded: false,
 
@@ -13,11 +13,8 @@ export default Ember.Component.extend({
     return this.get('transaction.amount') / 100;
   }),
 
-  click() {
-    this.toggleProperty('expanded');
-  },
-
   merchant: Ember.computed.alias('transaction.merchant'),
+  address: Ember.computed.alias('merchant.address'),
 
   title: Ember.computed('transaction.isLoad', 'merchant.name', function() {
     if (this.get('transaction.isLoad')) {
@@ -33,5 +30,11 @@ export default Ember.Component.extend({
     } else {
       return this.get('merchant.logo');
     }
-  })
+  }),
+
+  actions: {
+    toggleExpand() {
+      this.toggleProperty('expanded');
+    }
+  }
 });

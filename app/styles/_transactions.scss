@@ -1,8 +1,7 @@
-.transactions {
-  .header {
-    @extend .list-group-item;
-    @extend .row;
+$map-height: 150px;
 
+.transactions {
+  .current {
     background-color: $navbar-default-bg;
 
     .title {
@@ -19,8 +18,8 @@
     }
   }
 
-  .list-group {
-    .transaction {
+  .transaction {
+    .header {
       .logo {
         @extend .col-sm-1;
         @extend .col-md-1;
@@ -46,6 +45,14 @@
         @extend .col-md-3;
 
         text-align: right;
+      }
+    }
+
+    .details {
+      padding-top: $padding-base-vertical * 2;
+
+      .map {
+        min-height: $map-height;
       }
     }
   }

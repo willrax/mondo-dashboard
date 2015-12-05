@@ -45,7 +45,7 @@
     "ember-export-application-global": "^1.0.4",
     "ember-intl": "2.0.0-rc.7",
     "ember-localstorage-adapter": "0.5.5",
-    "ember-pagefront": "0.9.9",
+    "ember-pagefront": "willrax/ember-pagefront#13d0cc4aaecb5421320c81b98d3efa3f065769bd",
     "ember-validations": "2.0.0-alpha.4",
     "install": "0.4.0"
   }

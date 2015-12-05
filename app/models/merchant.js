@@ -7,5 +7,7 @@ export default DS.Model.extend({
   emoji: DS.attr('string'),
   logo: DS.attr('string'),
   name: DS.attr('string'),
-  online: DS.attr('boolean')
+  online: DS.attr('boolean'),
+  latitude: DS.attr('number'),
+  longitude: DS.attr('number')
 });

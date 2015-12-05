@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   classNames: ['list-group-item', 'row', 'transaction'],
   tagName: 'div',
+  expanded: false,
 
   attrs: {
     transaction: null
@@ -11,6 +12,10 @@ export default Ember.Component.extend({
   amount: Ember.computed('transaction.amount', function() {
     return this.get('transaction.amount') / 100;
   }),
+
+  click() {
+    this.toggleProperty('expanded');
+  },
 
   merchant: Ember.computed.alias('transaction.merchant'),
 
